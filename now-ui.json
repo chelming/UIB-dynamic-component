@@ -1,0 +1,72 @@
+{
+  "scopeName": "global",
+  "components": {
+    "dynamic-component": {
+      "innerComponents": [],
+      "uiBuilder": {
+        "associatedTypes": [
+          "global.core",
+          "global.landing-page"
+        ],
+        "label": "Dynamic Component",
+        "icon": "code-outline",
+        "description": "Renders another custom element by tag name and binds an arbitrary JSON object onto it as properties. Use when the target component isn't known until runtime.",
+        "category": "utility"
+      },
+      "properties": [
+        {
+          "name": "componentName",
+          "label": "Component Name",
+          "description": "Custom element tag name to render, e.g. 'now-button'.",
+          "fieldType": "string",
+          "defaultValue": ""
+        },
+        {
+          "name": "properties",
+          "label": "Properties",
+          "description": "JSON object of properties to set on the rendered component. Each key is set directly as a DOM property on the element.",
+          "fieldType": "json",
+          "defaultValue": {}
+        },
+        {
+          "name": "events",
+          "label": "Events",
+          "description": "JSON array of event names to forward from the rendered component as a single Dynamic Component Event (e.g. [\"BUTTON_CLICKED\"]). The rendered component (or a descendant inside its own shadow tree) must dispatch a CustomEvent with a matching type.",
+          "fieldType": "json",
+          "defaultValue": []
+        }
+      ],
+      "actions": [
+        {
+          "name": "DYNAMIC_COMPONENT_EVENT",
+          "label": "Dynamic Component Event",
+          "description": "Fired when the rendered component dispatches any event listed in Events. Use eventName to identify which event fired.",
+          "payload": [
+            {
+              "name": "eventName",
+              "label": "Event Name",
+              "description": "The name of the event fired by the rendered component.",
+              "fieldType": "string",
+              "typeMetadata": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            {
+              "name": "eventPayload",
+              "label": "Event Payload",
+              "description": "The original event's detail payload, or null if it had none.",
+              "fieldType": "json",
+              "typeMetadata": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

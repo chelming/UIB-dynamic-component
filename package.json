@@ -1,0 +1,14 @@
+{
+  "name": "dynamic-component",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Standalone ServiceNow UI Builder component that renders another custom element by tag name and binds a JSON object onto it as properties.",
+  "engines": {
+    "node": ">=22"
+  },
+  "module": "src/index.js",
+  "dependencies": {
+    "@servicenow/ui-core": "24.1.1",
+    "@servicenow/ui-renderer-snabbdom": "24.1.1"
+  }
+}

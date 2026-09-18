@@ -1,0 +1,10 @@
+{
+  "development": {
+    "devServer": {
+      "client": {
+        "overlay": false
+      }
+    }
+  },
+  "version": "2"
+}
